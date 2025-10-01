@@ -1,12 +1,14 @@
 import { getProduct } from "@/lib/api";
 import Link from "next/link";
 import Image from "next/image";
-
+interface ProductDetailPageProps {
+  params: {
+    id: string;
+  };
+}
 export default async function ProductDetailPage({
   params,
-}: {
-  params: { id: string };
-}) {
+}: ProductDetailPageProps) {
   const product = await getProduct(params.id);
 
   return (
