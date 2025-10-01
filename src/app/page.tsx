@@ -14,7 +14,7 @@ export default async function Home() {
             key={product.id}
             className="flex flex-col justify-center items-center gap-3 shadow-[0_0_10px_var(--color-midnight-purple)] text-[var(--color-pastel-blue)] text-center border-2 border-[var(--color-midnight-purple)] p-4 w-[90%] xl:w-[30%] rounded-2xl cursor-pointer hover:border-4 hover:shadow-[0_0_20px_var(--color-midnight-purple)]  transition-all duration-300"
           >
-            <Image
+            <img
               src={product.image}
               alt={product.title}
               width={100}

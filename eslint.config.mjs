@@ -20,7 +20,8 @@ const eslintConfig = [
       "next-env.d.ts",
     ],
     rules: {
-      "@typescript-eslint/no-explicit-any": "off", // <-- отключаем правило
+      "@typescript-eslint/no-explicit-any": "off", // отключили any
+      "@next/next/no-img-element": "off", // отключаем предупреждение про <img>
     },
   },
 ];

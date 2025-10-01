@@ -1,9 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: {
-    domains: ["fakestoreapi.com"], // разрешаем загрузку картинок с fakestoreapi.com
-  },
+  /* config options here */
 };
 
 export default nextConfig;

@@ -1,6 +1,6 @@
 import { getProduct } from "@/lib/api";
 import Link from "next/link";
-import Image from "next/image";
+
 interface ProductDetailPageProps {
   params: {
     id: string;
@@ -14,7 +14,7 @@ export default async function ProductDetailPage({
   return (
     <div className="flex flex-col gap-15 py-5 justify-center items-center h-screen text-center text-[var(--color-pastel-blue)]">
       <h1 className="text-3xl font-bold">{product.title}</h1>
-      <Image
+      <img
         src={product.image}
         alt={product.title}
         width={200}
