@@ -11,8 +11,8 @@ export default async function ProductDetailPage({ params }: Props) {
 
   if (!product) {
     return (
-      <div className="mt-10 flex flex-col gap-15 py-5 justify-center items-center h-[90%] text-center px-3.5">
-        <h1 className="text-3xl font-bold">Product not found</h1>
+      <div className="!mt-10 flex flex-col gap-15 py-5 justify-center items-center h-[90%] text-center px-3.5">
+        <h1 className="mt-10 text-3xl font-bold">Product not found</h1>
         <Link
           href="/"
           className="mt-5 inline-block font-extrabold opacity-65 cursor-pointer underline hover:opacity-100 transition-all duration-300"
@@ -24,7 +24,7 @@ export default async function ProductDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="flex flex-col gap-15 py-5 justify-center items-center h-screen text-center text-[var(--color-pastel-blue)]">
+    <div className="mt-15 flex flex-col gap-15 py-5 justify-center items-center h-screen text-center text-[var(--color-pastel-blue)] px-3.5 overflow-y-hidden">
       <h1 className="text-3xl font-bold">{product.title}</h1>
       <img
         src={product.image}
