@@ -1,21 +1,27 @@
 import { getProduct } from "@/lib/api";
 import Link from "next/link";
 
-// Тип продукта
-interface Product {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  image: string;
-}
-
 interface Props {
   params: Promise<{ id: string }>;
 }
 
 export default async function ProductDetailPage({ params }: Props) {
-  const product: Product = await getProduct((await params).id);
+  const { id } = await params;
+  const product = await getProduct(id); // Добавьте этот вызов
+
+  if (!product) {
+    return (
+      <div className="flex flex-col gap-15 py-5 justify-center items-center h-screen text-center">
+        <h1 className="text-3xl font-bold">Product not found</h1>
+        <Link
+          href="/"
+          className="mt-5 inline-block font-extrabold opacity-65 cursor-pointer underline hover:opacity-100 transition-all duration-300"
+        >
+          ← Back to Products
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col gap-15 py-5 justify-center items-center h-screen text-center text-[var(--color-pastel-blue)]">
