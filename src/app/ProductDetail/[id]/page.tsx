@@ -10,16 +10,12 @@ interface Product {
   image: string;
 }
 
-interface ProductDetailPageProps {
-  params: {
-    id: string;
-  };
+interface Props {
+  params: Promise<{ id: string }>;
 }
 
-export default async function ProductDetailPage({
-  params,
-}: ProductDetailPageProps) {
-  const product: Product = await getProduct(params.id);
+export default async function ProductDetailPage({ params }: Props) {
+  const product: Product = await getProduct((await params).id);
 
   return (
     <div className="flex flex-col gap-15 py-5 justify-center items-center h-screen text-center text-[var(--color-pastel-blue)]">
