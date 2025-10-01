@@ -7,6 +7,8 @@ interface Props {
   params: Promise<{ id: string }>;
 }
 
+// salam
+
 export const generateMetadata = async ({
   params,
 }: Props): Promise<Metadata> => {
