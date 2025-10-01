@@ -11,7 +11,7 @@ export default async function ProductDetailPage({ params }: Props) {
 
   if (!product) {
     return (
-      <div className="flex flex-col gap-15 py-5 justify-center items-center h-screen text-center">
+      <div className="mt-10 flex flex-col gap-15 py-5 justify-center items-center h-[90%] text-center px-3.5">
         <h1 className="text-3xl font-bold">Product not found</h1>
         <Link
           href="/"
