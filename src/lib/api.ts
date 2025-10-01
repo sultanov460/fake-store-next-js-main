@@ -1,16 +1,13 @@
-// src/lib/api.ts
+import axios from "axios";
+
 export async function getProducts() {
-  const res = await fetch("https://fakestoreapi.com/products");
-  if (!res.ok) {
-    throw new Error("Failed to fetch products");
-  }
-  return res.json();
+  const res = await axios.get("https://fakestoreapi.com/products");
+
+  return res.data;
 }
 
 export async function getProduct(id: string) {
-  const res = await fetch(`https://fakestoreapi.com/products/${id}`);
-  if (!res.ok) {
-    throw new Error("Failed to fetch product");
-  }
-  return res.json();
+  const res = await axios.get(`https://fakestoreapi.com/products/${id}`);
+
+  return res.data;
 }

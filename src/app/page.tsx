@@ -1,14 +1,15 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { getProducts } from "@/lib/api";
+import { Product } from "@/types/product";
 
 export default async function Home() {
   const products = await getProducts();
+
   return (
     <div className={`bg-[--background-gradient-main] py-5`}>
       <div className="flex justify-center flex-wrap gap-15">
-        {products.map((product: any) => (
+        {products.map((product: Product) => (
           <Link
             href={`/ProductDetail/${product.id}`}
             key={product.id}
@@ -21,7 +22,7 @@ export default async function Home() {
               height={100}
             />
             <h3 className="text-lg font-medium">{product.title}</h3>
-            <p className="text-lg font-bold underline">{`${product.price}$`}</p>
+            <p className="text-lg font-bold underline">{product.price}</p>
           </Link>
         ))}
       </div>

@@ -1,13 +1,34 @@
 import { getProduct } from "@/lib/api";
+import { Product } from "@/types/product";
+import { Metadata } from "next";
 import Link from "next/link";
 
 interface Props {
   params: Promise<{ id: string }>;
 }
 
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  const { id } = await params;
+  const product: Product = await getProduct(id);
+
+  if (!product) {
+    return {
+      title: "Product Not Found",
+      description: "The product is missing somewhere",
+    };
+  }
+
+  return {
+    title: product.title,
+    description: product.description,
+  };
+};
+
 export default async function ProductDetailPage({ params }: Props) {
   const { id } = await params;
-  const product = await getProduct(id); // Добавьте этот вызов
+  const product: Product = await getProduct(id);
 
   if (!product) {
     return (
@@ -33,7 +54,7 @@ export default async function ProductDetailPage({ params }: Props) {
         height={200}
         className="w-60 h-60 object-contain my-5"
       />
-      <p className="text-lg">{product.description}</p>
+      <p className="text-lg max-w-150">{product.description}</p>
       <p className="text-xl font-semibold mt-3">${product.price}</p>
 
       <Link
