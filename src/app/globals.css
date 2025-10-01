@@ -6,11 +6,11 @@
   --foreground: #171717;
 
   /* Кастомные цвета */
-  --color-midnight-purple: #541276;
-  --color-pastel-blue: #e4e3fd;
+  --color-midnight-purple: #c21818;
+  --color-pastel-blue: #640446;
 
   /* Градиент */
-  --gradient-main: linear-gradient(to top, #100739, #06011f);
+  --gradient-main: linear-gradient(135deg, #d16ec4, #9247ab, #c2185b);
 }
 
 @theme inline {
