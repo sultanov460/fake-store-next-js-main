@@ -2,8 +2,11 @@ import { FaShoppingCart } from "react-icons/fa";
 const Navbar = () => {
   return (
     <div className="flex justify-between items-center bg-[var(--color-pastel-blue)] py-4 px-3">
-      <div className="text-2xl text-[var(--color-midnight-purple)]">
-        <span className="p-2 font-medium bg-[var(--color-midnight-purple)] text-[var(--color-pastel-blue)] rounded-lg">
+      <div className="text-2xl text-[var(--color-midnight-purple)] flex gap-1 items-center">
+        <span
+          className="p-2 font-bold
+         bg-[var(--color-midnight-purple)] text-[var(--color-pastel-blue)] rounded-lg"
+        >
           FAKE
         </span>
         STORE
